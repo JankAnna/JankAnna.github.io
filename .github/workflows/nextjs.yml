@@ -78,11 +78,7 @@ jobs:
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
-<<<<<<< HEAD
         uses: actions/upload-pages-artifact@v1
-=======
-        uses: actions/upload-pages-artifact@v2
->>>>>>> 976ad8e1968119b216d100db5a11c9715b07faac
         with:
           path: ./out
 
