@@ -1,0 +1,93 @@
+{
+	"id": "plpl",
+	"navbarMenu": {
+		"labelHome": "STRONA GŁÓWNA",
+		"labelServices": "USŁUGI",
+		"labelAboutMe": "O MNIE",
+		"labelPortifolio": "PROJEKTY",
+		"labelExperience": "DOŚWIADCZENIE"
+	},
+	"landingPage": {
+		"apresentationText": "Witaj, Nazywam się",
+		"typeText": "Anna Zofia Jankowska",
+		"resumeText": "Fascinated by IT and its security issues, I oriented myself in the cybersecurity professions. Creative and persevering, I like to take up challenges as a team to meet current issues in terms of IT security.Fascinated by IT and its security issues, I oriented myself in the cybersecurity professions. Creative and persevering, I like to take up challenges as a team to meet current issues in terms of IT security.",
+		"buttonText": "DOWIEDZ SIĘ WIĘCEJ"
+	},
+	"servicesOffer": {
+		"title": "Projekty",
+		"cards": {
+			"cybersecurity": {
+				"title": "CYBERBEZPIECZEŃSTWO",
+				"contentText": "Penetration Testing, SIEM and SOC, DevSecOps, Architecture, Forensic, Bug Bounty, CTF"
+			},
+			"programming": {
+				"title": "PROGRAMOWANIE",
+				"contentText": "HTML, Python, Javascript, Shell"
+			},
+			"engineering": {
+				"title": "INŻYNIERIA",
+				"contentText": "Inżynieria Chemiczna i Procesowa | Przetwórstwo tworzyw sztucznych || Technolog | Konstruktor"
+			},
+			"levelup": {
+				"title": "CIĄGŁY ROZWÓJ",
+				"contentText": "Trudność jest zanim osiągniesz właściwy poziom. Nie przestawaj. Próbuj dalej. | Najlepszy widok przychodzi po najtrudniejszej wspinaczce"
+			}
+		}
+	},
+	"aboutMePage": {
+		"title": "ABOUT ME",
+		"paragraph_one": "I completed the Cybersecurity course organized by HackerU in cooperation with the University of Warsaw, the course included the modules Linux Fundamentals, Windows Server 2016, Bypassing the Perimeter, SIEM & SOC, Cross Platform Elevation of Privileges, Advanced Infrastructure, Python for Hacking, Web Fundamentals, Web Application Penetration Testing, Mobile Security and OSCP Preparation.",
+		"paragraph_two": "I use VirtualBox and Proxmox virtualizers. I can write simple scripts with the extension .ps1 .sh .py .html .css .js .php. I am also familiar with the basis of network protocols, e-mail and encryption (wiresharka, airmon-ng, ARP Spoofing, scapy in python, nmap, some of the tools that use network protocols)",
+		"paragraph_three": "I devote every free moment to learning cybersecurity, learning the methods used by hackers and security - I graduated from The Advent of Cyber 2021 at tryhackme.com.",
+		"github_card": {
+			"followers": "followers",
+			"following": "following",
+			"repos": "repos"
+		},
+		"alt_dev_img": "Anna Zofia Jankowska"
+	},
+	"portifolioPage": {
+		"title": "PROJECTS",
+		"labelFilter": "ALL",
+		"createdLabel": "Created at"
+	},
+	"experiencePage": {
+		"title": "DOŚWIADCZENIE | EDUKACJA | KURSY",
+		"timeline": {
+			"labelPosition": "stanowisko",
+			"labelTitle": "tytuł",
+			"labelCompany": "firma",
+			"labelCategory": "kategoria",
+			"labelInstitution": "instytucja",
+			"labelProfessionalCourse": "kurs zawodowy",
+			"labelBachelorDegree": "licencjat",
+			"labelBachelorOfEngineering": "inżynier",
+			"labelPostgraduateStudies": "studia podyplomowe",
+			"labelSpecialization": "specializacja",
+			"labelExtensionCourse": "kurs rozszerzony",
+			"labelThesisTopic": "tytuł pracy",
+			"labelGermanyTrip": "wyjazd studyjny do Niemiec",
+			"labelDescription": "opis"
+		}
+	},
+	"footer": {
+		"labelNavigation": {
+			"title": "NAVIGATION",
+			"labelHome": "Home",
+			"labelServices": "Services",
+			"labelAboutMe": "About me",
+			"labelPortifolio": "Projects",
+			"labelExperience": "Experience"
+		},
+		"labelHost": {
+			"title": "WEBSITE HOSTING"
+		},
+		"labelSourceCode": {
+			"title": "SOURCE CODE"
+		},
+		"labelTechs": {
+			"title": "TECHNOLOGIES"
+		},
+		"labelBuildVersion": "Version"
+	}
+}

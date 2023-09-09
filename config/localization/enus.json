@@ -1,0 +1,93 @@
+{
+	"id": "enus",
+	"navbarMenu": {
+		"labelHome": "HOME",
+		"labelServices": "SERVICES",
+		"labelAboutMe": "ABOUT ME",
+		"labelPortifolio": "PROJECTS",
+		"labelExperience": "EXPERIENCES"
+	},
+	"landingPage": {
+		"apresentationText": "Hello, I'm",
+		"typeText": "Anna Zofia Jankowska",
+		"resumeText": "Fascinated by IT and its security issues, I oriented myself in the cybersecurity professions. Creative and persevering, I like to take up challenges as a team to meet current issues in terms of IT security.",
+		"buttonText": "FIND OUT MORE"
+	},
+	"servicesOffer": {
+		"title": "Services",
+		"cards": {
+			"cybersecurity": {
+				"title": "CYBERSECURITY",
+				"contentText": "Penetration Testing, SIEM & SOC, DevSecOps, Architecture, Forensic, Bug Bounty, CTF"
+			},
+			"programming": {
+				"title": "PROGRAMMING",
+				"contentText": "HTML, Python, Javascript, Shell"
+			},
+			"engineering": {
+				"title": "ENGINEERING",
+				"contentText": "Chemical and Process Engineering | Plastic Technology and Processing || Technologist | Constructor"
+			},
+			"levelup": {
+				"title": "PROGRESS",
+				"contentText": "Thing will get hard before you level up. Don't stop. Try harder. | The best view comes after the hardest climb."
+			}
+		}
+	},
+	"aboutMePage": {
+		"title": "ABOUT ME",
+		"paragraph_one": "I completed the Cybersecurity course organized by HackerU in cooperation with the University of Warsaw, the course included the modules Linux Fundamentals, Windows Server 2016, Bypassing the Perimeter, SIEM & SOC, Cross Platform Elevation of Privileges, Advanced Infrastructure, Python for Hacking, Web Fundamentals, Web Application Penetration Testing, Mobile Security and OSCP Preparation.",
+		"paragraph_two": "I use VirtualBox and Proxmox virtualizers. I can write simple scripts with the extension .ps1 .sh .py .html .css .js .php. I am also familiar with the basis of network protocols, e-mail and encryption (wiresharka, airmon-ng, ARP Spoofing, scapy in python, nmap, some of the tools that use network protocols)",
+		"paragraph_three": "I devote every free moment to learning cybersecurity, learning the methods used by hackers and security - I graduated from The Advent of Cyber 2021 at tryhackme.com.",
+		"github_card": {
+			"followers": "followers",
+			"following": "following",
+			"repos": "repos"
+		},
+		"alt_dev_img": "Anna Zofia Jankowska"
+	},
+	"portifolioPage": {
+		"title": "PROJECTS",
+		"labelFilter": "ALL",
+		"createdLabel": "Created at"
+	},
+	"experiencePage": {
+		"title": "EXPERIENCE | EDUCATION | COURSES",
+		"timeline": {
+			"labelPosition": "Position",
+			"labelTitle": "Title",
+			"labelCompany": "Company",
+			"labelCategory": "Category",
+			"labelInstitution": "Institution",
+			"labelProfessionalCourse": "Professional course",
+			"labelBachelorDegree": "Bachelor degree",
+			"labelBachelorOfEngineering": "Bachelor of Engineering",
+			"labelPostgraduateStudies": "postgraduate studies",
+			"labelSpecialization": "Specialization",
+			"labelExtensionCourse": "Extension course",
+			"labelThesisTopic": "Thesis topic",
+			"labelGermanyTrip": "Study trip to Germany",
+			"labelDescription": "Description"
+		}
+	},
+	"footer": {
+		"labelNavigation": {
+			"title": "NAVIGATION",
+			"labelHome": "Home",
+			"labelServices": "Services",
+			"labelAboutMe": "About me",
+			"labelPortifolio": "Projects",
+			"labelExperience": "Experience"
+		},
+		"labelHost": {
+			"title": "WEBSITE HOSTING"
+		},
+		"labelSourceCode": {
+			"title": "SOURCE CODE"
+		},
+		"labelTechs": {
+			"title": "TECHNOLOGIES"
+		},
+		"labelBuildVersion": "Version"
+	}
+}
