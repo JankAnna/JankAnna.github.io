@@ -69,7 +69,7 @@ export default function SocialNetworkRowStack() {
 				<Github />
 			</ButtonSocialMediaIcon>
 
-			<ButtonSocialMediaIcon href="mailto:anzojank@gmail.com" target="_blank">
+			<ButtonSocialMediaIcon href="mailto:mail@janna.pl" target="_blank">
 				<MailSend />
 			</ButtonSocialMediaIcon>
 
