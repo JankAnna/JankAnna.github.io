@@ -1226,14 +1226,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.19.0", "@babel/runtime@^7.20.7":
-  version "7.20.13"
-  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.20.13.tgz"
-  integrity sha512-gt3PKXs0DBoL9xCvOIIZ2NEqAGZqHjAnmVbfQtB620V0uReIQutpel14KcneZuer7UioY8ALKZ7iocavvzTNFA==
-  dependencies:
-    regenerator-runtime "^0.13.11"
-
-"@babel/runtime@^7.8.4":
+"@babel/runtime@^7.19.0", "@babel/runtime@^7.20.7", "@babel/runtime@^7.8.4":
   version "7.26.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.26.0.tgz#8600c2f595f277c60815256418b85356a65173c1"
   integrity sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==
@@ -1730,12 +1723,12 @@
     "@babel/runtime" "^7.19.0"
     "@styled-icons/styled-icon" "^10.7.0"
 
-"@styled-icons/styled-icon@10.7.0", "@styled-icons/styled-icon@^10.7.0":
-  version "10.7.0"
-  resolved "https://registry.npmjs.org/@styled-icons/styled-icon/-/styled-icon-10.7.0.tgz"
-  integrity sha512-SCrhCfRyoY8DY7gUkpz+B0RqUg/n1Zaqrr2+YKmK/AyeNfCcoHuP4R9N4H0p/NA1l7PTU10ZkAWSLi68phnAjw==
+"@styled-icons/styled-icon@10.7.1", "@styled-icons/styled-icon@^10.7.0":
+  version "10.7.1"
+  resolved "https://registry.yarnpkg.com/@styled-icons/styled-icon/-/styled-icon-10.7.1.tgz#da04b80751e126756f98a5485b3b0dd9b52c9aba"
+  integrity sha512-WLYaeMTMhMkSxE+v+of+r2ovIk0tceDGfv8iqWHRMxvbm+6zxngVcQ4ELx6Zt/LFxqckmmoAdvo6ehiiYj6I6A==
   dependencies:
-    "@babel/runtime" "^7.19.0"
+    "@babel/runtime" "^7.20.7"
 
 "@styled-icons/typicons@10.46.0":
   version "10.46.0"
@@ -9771,11 +9764,6 @@ regenerator-runtime@^0.12.0:
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
   integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
 
-regenerator-runtime@^0.13.11:
-  version "0.13.11"
-  resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz"
-  integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
-
 regenerator-runtime@^0.14.0:
   version "0.14.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.14.1.tgz#356ade10263f685dda125100cd862c1db895327f"
@@ -10855,10 +10843,10 @@ styled-components@^5.3.6:
     shallowequal "^1.1.0"
     supports-color "^5.5.0"
 
-styled-icons@^10.47.0:
-  version "10.47.0"
-  resolved "https://registry.npmjs.org/styled-icons/-/styled-icons-10.47.0.tgz"
-  integrity sha512-tMdhM1kB8qJEf1TLrZrPiVqfODEe4JjbqTJ5mGAyJOCnqC3BvqGwL5q30xuWeU2gqGPwyFfgrQM9nupka55IGw==
+styled-icons@^10.47.1:
+  version "10.47.1"
+  resolved "https://registry.yarnpkg.com/styled-icons/-/styled-icons-10.47.1.tgz#74511ca779147f482eba7434b0e5ca1fa8c8f8a6"
+  integrity sha512-O6SguU8Z8Qk+rWJkiPmoLOxCQ3x8Emabue2r4NPqX+CK1uyaNahzFtKaGq/0d13RTWXqfVOBUSIJZaIlu4G/CA==
   dependencies:
     "@babel/runtime" "^7.20.7"
     "@styled-icons/bootstrap" "10.47.0"
@@ -10895,7 +10883,7 @@ styled-icons@^10.47.0:
     "@styled-icons/remix-fill" "10.46.0"
     "@styled-icons/remix-line" "10.46.0"
     "@styled-icons/simple-icons" "10.46.0"
-    "@styled-icons/styled-icon" "10.7.0"
+    "@styled-icons/styled-icon" "10.7.1"
     "@styled-icons/typicons" "10.46.0"
     "@styled-icons/zondicons" "10.46.0"
 
