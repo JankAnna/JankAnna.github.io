@@ -21,7 +21,7 @@
 		"react-vertical-timeline-component": "^3.6.0",
 		"styled-components": "^5.3.6",
 		"styled-icons": "^10.47.1",
-		"react-scripts": "2.1.8",
+		"react-scripts": "5.0.1",
 		"react-tabs": "3.0.0"
 	}
 }
