@@ -9,19 +9,19 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"next": "^15.1.2",
+		"next": "^15.2.3",
 		"react": "^18.3.1",
-		"react-animate-on-scroll": "^2.1.5",
+		"react-animate-on-scroll": "^2.1.9",
 		"react-dom": "^18.2.0",
-		"react-lottie": "^1.2.3",
+		"react-lottie": "^1.2.10",
 		"react-progressbar-on-scroll": "^2.0.0",
 		"react-reveal": "^1.2.2",
 		"react-scroll": "^1.8.9",
 		"react-typed": "^2.0.12",
 		"react-vertical-timeline-component": "^3.6.0",
-		"styled-components": "^5.3.6",
+		"styled-components": "^6.1.16",
 		"styled-icons": "^10.47.1",
 		"react-scripts": "5.0.1",
-		"react-tabs": "3.0.0"
+		"react-tabs": "6.1.0"
 	}
 }
