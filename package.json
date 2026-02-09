@@ -18,7 +18,7 @@
 		"react-reveal": "^1.2.2",
 		"react-scroll": "^1.9.3",
 		"react-typed": "^2.0.12",
-		"react-vertical-timeline-component": "^3.6.0",
+		"react-vertical-timeline-component": "^4.0.0",
 		"styled-components": "^6.1.18",
 		"styled-icons": "^10.47.1",
 		"react-scripts": "5.0.1",
