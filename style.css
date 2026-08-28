@@ -603,9 +603,23 @@ h1 span {
 
 
     .identity {
-        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
 
-        margin-top: -30px;
+        margin-bottom: 24px;
+
+        font-family: "DM Mono", monospace;
+        font-size: 9px;
+        letter-spacing: 0.08em;
+    }
+
+    .identity-label {
+        color: var(--text);
+    }
+
+    .identity-alias {
+        color: var(--muted);
     }
 
 
@@ -617,6 +631,10 @@ h1 span {
         );
     }
 
+    .title-area {
+        display: flex;
+        flex-direction: column;
+    }
 
     .description {
         max-width: 320px;
