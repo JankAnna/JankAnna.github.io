@@ -115,7 +115,7 @@ body::before {
 -------------------------------- */
 
 .header {
-    height: 96px;
+    min-height: 96px;
 
     display: flex;
     align-items: center;
@@ -125,33 +125,96 @@ body::before {
 }
 
 
+/* --------------------------------
+   BRAND GROUP
+-------------------------------- */
+
+.brand-group {
+    height: 42px;
+
+    display: flex;
+    align-items: stretch;
+}
+
+
+/* --------------------------------
+   BRAND
+-------------------------------- */
+
 .brand {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    padding-right: 24px;
+
     color: var(--text);
     text-decoration: none;
 
     font-family: "DM Mono", monospace;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
-
     letter-spacing: 0.08em;
 
-    transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
 
-.brand span {
-    color: var(--accent);
+/* --------------------------------
+   IDENTITY
+-------------------------------- */
+
+.identity {
+    min-height: 42px;
+
+    padding-left: 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 5px;
+
+    border-left: 1px solid var(--line);
 }
 
 
-.brand:hover {
-    color: var(--accent);
+.identity-name {
+    color: var(--text);
+
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+
+    white-space: nowrap;
 }
 
+
+.identity-alias {
+    color: var(--muted);
+
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* --------------------------------
+   SYSTEM STATUS
+-------------------------------- */
 
 .system-status {
     display: flex;
     align-items: center;
+
     gap: 9px;
 
     color: var(--muted);
@@ -160,12 +223,16 @@ body::before {
     font-size: 9px;
 
     letter-spacing: 0.1em;
+
+    white-space: nowrap;
 }
 
 
 .status-indicator {
     width: 6px;
     height: 6px;
+
+    flex: 0 0 6px;
 
     border-radius: 50%;
 
@@ -206,6 +273,7 @@ body::before {
 
 .eyebrow {
     display: flex;
+
     gap: 18px;
 
     color: var(--muted);
@@ -237,40 +305,11 @@ body::before {
 }
 
 
-/* --------------------------------
-   IDENTITY
--------------------------------- */
-
-.identity {
-    position: absolute;
-
-    margin-top: -55px;
-
+.title-area {
     display: flex;
     flex-direction: column;
-
-    gap: 5px;
-
-    font-family: "DM Mono", monospace;
-    font-size: 9px;
-
-    letter-spacing: 0.08em;
 }
 
-
-.identity-label {
-    color: var(--text);
-}
-
-
-.identity-alias {
-    color: var(--muted);
-}
-
-
-/* --------------------------------
-   TITLE
--------------------------------- */
 
 .title-wrap {
     position: relative;
@@ -343,9 +382,8 @@ h1 span {
 }
 
 
-.description p:first-child {
+.description p {
     color: var(--text);
-
     margin-bottom: 12px;
 }
 
@@ -363,8 +401,7 @@ h1 span {
     margin-top: 95px;
 
     display: grid;
-    grid-template-columns:
-        repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 
     border-top: 1px solid var(--line);
 }
@@ -409,7 +446,6 @@ h1 span {
 
 .domain .number {
     color: var(--dim);
-
     font-size: 9px;
 }
 
@@ -427,6 +463,8 @@ h1 span {
         1fr 3fr;
 
     border-top: 1px solid var(--line);
+
+    margin-top: 75px;
 }
 
 
@@ -434,6 +472,7 @@ h1 span {
     padding-top: 22px;
 
     display: flex;
+
     gap: 18px;
 
     color: var(--muted);
@@ -544,7 +583,6 @@ h1 span {
 
 .footer-links {
     display: flex;
-
     gap: 28px;
 }
 
@@ -566,7 +604,6 @@ h1 span {
 
 .version {
     justify-self: end;
-
     color: var(--dim);
 }
 
@@ -583,7 +620,46 @@ h1 span {
 
 
     .header {
-        height: 76px;
+        min-height: 76px;
+    }
+
+
+    .brand-group {
+        height: 38px;
+    }
+
+
+    .brand {
+        height: 38px;
+
+        padding-right: 18px;
+
+        font-size: 14px;
+    }
+
+
+    .identity {
+        min-height: 38px;
+
+        padding-left: 18px;
+
+        gap: 4px;
+    }
+
+
+    .identity-name {
+        font-size: 8px;
+        letter-spacing: 0.08em;
+    }
+
+
+    .identity-alias {
+        font-size: 8px;
+    }
+
+
+    .system-status {
+        font-size: 8px;
     }
 
 
@@ -596,30 +672,10 @@ h1 span {
         margin-top: 55px;
 
         flex-direction: column;
+
         align-items: flex-start;
 
         gap: 50px;
-    }
-
-
-    .identity {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-
-        margin-bottom: 24px;
-
-        font-family: "DM Mono", monospace;
-        font-size: 9px;
-        letter-spacing: 0.08em;
-    }
-
-    .identity-label {
-        color: var(--text);
-    }
-
-    .identity-alias {
-        color: var(--muted);
     }
 
 
@@ -631,10 +687,6 @@ h1 span {
         );
     }
 
-    .title-area {
-        display: flex;
-        flex-direction: column;
-    }
 
     .description {
         max-width: 320px;
@@ -659,12 +711,16 @@ h1 span {
     }
 
 
-    /* CURRENT FOCUS */
+    /* --------------------------------
+       CURRENT FOCUS
+    -------------------------------- */
 
     .scope {
         grid-template-columns: 1fr;
 
         padding-bottom: 65px;
+
+        margin-top: 65px;
     }
 
 
@@ -683,6 +739,10 @@ h1 span {
         min-height: 135px;
     }
 
+
+    /* --------------------------------
+       FOOTER
+    -------------------------------- */
 
     .footer {
         grid-template-columns:
@@ -731,10 +791,56 @@ h1 span {
 }
 
 
+/* --------------------------------
+   VERY SMALL MOBILE
+-------------------------------- */
+
 @media (max-width: 450px) {
 
     .system-status {
         display: none;
+    }
+
+
+    .header {
+        min-height: 76px;
+    }
+
+
+    .brand-group {
+        width: 100%;
+
+        height: 38px;
+
+        justify-content: flex-start;
+    }
+
+
+    .brand {
+        font-size: 13px;
+
+        padding-right: 15px;
+    }
+
+
+    .identity {
+        padding-left: 15px;
+
+        gap: 4px;
+    }
+
+
+    .identity-name {
+        font-size: 7px;
+
+        letter-spacing: 0.06em;
+    }
+
+
+    .identity-alias {
+        font-size: 7px;
+
+        letter-spacing: 0.05em;
     }
 
 
