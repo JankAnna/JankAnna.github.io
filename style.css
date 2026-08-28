@@ -1,6 +1,4 @@
-@import url(
-    'https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap'
-);
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
 
 
 :root {
@@ -12,6 +10,10 @@
     --accent: #b7ff4a;
 }
 
+
+/* --------------------------------
+   RESET
+-------------------------------- */
 
 * {
     box-sizing: border-box;
@@ -29,11 +31,8 @@ body {
 body {
     background: var(--bg);
     color: var(--text);
-
     font-family: "Inter", sans-serif;
-
     overflow-x: hidden;
-
     -webkit-font-smoothing: antialiased;
 }
 
@@ -44,10 +43,8 @@ body {
 
 body::before {
     content: "";
-
     position: fixed;
     inset: 0;
-
     pointer-events: none;
 
     background-image:
@@ -63,7 +60,6 @@ body::before {
         );
 
     background-size: 72px 72px;
-
     opacity: 0.35;
 
     mask-image: linear-gradient(
@@ -71,17 +67,24 @@ body::before {
         black 0%,
         transparent 85%
     );
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        transparent 85%
+    );
 }
 
+
+/* --------------------------------
+   NOISE
+-------------------------------- */
 
 .noise {
     position: fixed;
     inset: 0;
-
     pointer-events: none;
-
     opacity: 0.025;
-
     z-index: 10;
 
     background-image:
@@ -100,7 +103,6 @@ body::before {
     );
 
     min-height: 100vh;
-
     margin: 0 auto;
 
     display: flex;
@@ -125,20 +127,24 @@ body::before {
 
 .brand {
     color: var(--text);
-
     text-decoration: none;
 
     font-family: "DM Mono", monospace;
-
     font-size: 14px;
-
     font-weight: 500;
 
     letter-spacing: 0.08em;
+
+    transition: color 0.2s ease;
 }
 
 
 .brand span {
+    color: var(--accent);
+}
+
+
+.brand:hover {
     color: var(--accent);
 }
 
@@ -151,7 +157,6 @@ body::before {
     color: var(--muted);
 
     font-family: "DM Mono", monospace;
-
     font-size: 9px;
 
     letter-spacing: 0.1em;
@@ -174,7 +179,6 @@ body::before {
 
 
 @keyframes blink {
-
     0%,
     100% {
         opacity: 1;
@@ -183,7 +187,6 @@ body::before {
     50% {
         opacity: 0.35;
     }
-
 }
 
 
@@ -197,7 +200,7 @@ body::before {
     display: flex;
     flex-direction: column;
 
-    padding: 100px 0 90px;
+    padding: 90px 0 75px;
 }
 
 
@@ -208,7 +211,6 @@ body::before {
     color: var(--muted);
 
     font-family: "DM Mono", monospace;
-
     font-size: 10px;
 
     letter-spacing: 0.12em;
@@ -220,18 +222,55 @@ body::before {
 }
 
 
+/* --------------------------------
+   HERO CONTENT
+-------------------------------- */
+
 .hero-content {
-    margin-top: 55px;
+    margin-top: 48px;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: flex-end;
 
     gap: 80px;
 }
 
+
+/* --------------------------------
+   IDENTITY
+-------------------------------- */
+
+.identity {
+    position: absolute;
+
+    margin-top: -55px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+}
+
+
+.identity-label {
+    color: var(--text);
+}
+
+
+.identity-alias {
+    color: var(--muted);
+}
+
+
+/* --------------------------------
+   TITLE
+-------------------------------- */
 
 .title-wrap {
     position: relative;
@@ -270,12 +309,12 @@ h1 span {
 
     vertical-align: bottom;
 
-    animation: cursor-blink 1s steps(1) infinite;
+    animation:
+        cursor-blink 1s steps(1) infinite;
 }
 
 
 @keyframes cursor-blink {
-
     0%,
     50% {
         opacity: 1;
@@ -285,7 +324,6 @@ h1 span {
     100% {
         opacity: 0;
     }
-
 }
 
 
@@ -299,7 +337,6 @@ h1 span {
     padding-bottom: 7px;
 
     font-family: "DM Mono", monospace;
-
     font-size: 11px;
 
     line-height: 1.8;
@@ -323,10 +360,9 @@ h1 span {
 -------------------------------- */
 
 .domains {
-    margin-top: 110px;
+    margin-top: 95px;
 
     display: grid;
-
     grid-template-columns:
         repeat(5, 1fr);
 
@@ -348,7 +384,6 @@ h1 span {
     color: #a5a8ac;
 
     font-family: "DM Mono", monospace;
-
     font-size: 10px;
 
     letter-spacing: 0.05em;
@@ -380,6 +415,109 @@ h1 span {
 
 
 /* --------------------------------
+   CURRENT FOCUS
+-------------------------------- */
+
+.scope {
+    padding: 0 0 90px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 3fr;
+
+    border-top: 1px solid var(--line);
+}
+
+
+.scope-label {
+    padding-top: 22px;
+
+    display: flex;
+    gap: 18px;
+
+    color: var(--muted);
+
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+
+    letter-spacing: 0.12em;
+}
+
+
+.scope-label span {
+    color: var(--accent);
+}
+
+
+.scope-content {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+}
+
+
+.scope-item {
+    min-height: 150px;
+
+    padding: 22px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid var(--line);
+
+    transition:
+        background 0.25s ease;
+}
+
+
+.scope-item:first-child {
+    border-left: 1px solid var(--line);
+}
+
+
+.scope-item:hover {
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+
+.scope-item > span {
+    margin-bottom: auto;
+
+    color: var(--dim);
+
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+}
+
+
+.scope-item strong {
+    margin-bottom: 9px;
+
+    color: var(--text);
+
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.05em;
+}
+
+
+.scope-item small {
+    color: var(--muted);
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+
+    line-height: 1.6;
+}
+
+
+/* --------------------------------
    FOOTER
 -------------------------------- */
 
@@ -398,7 +536,6 @@ h1 span {
     color: var(--muted);
 
     font-family: "DM Mono", monospace;
-
     font-size: 9px;
 
     letter-spacing: 0.06em;
@@ -451,18 +588,24 @@ h1 span {
 
 
     .hero {
-        padding: 75px 0 70px;
+        padding: 75px 0 65px;
     }
 
 
     .hero-content {
-        margin-top: 45px;
+        margin-top: 55px;
 
         flex-direction: column;
-
         align-items: flex-start;
 
         gap: 50px;
+    }
+
+
+    .identity {
+        position: static;
+
+        margin-top: -30px;
     }
 
 
@@ -481,7 +624,7 @@ h1 span {
 
 
     .domains {
-        margin-top: 75px;
+        margin-top: 70px;
 
         grid-template-columns:
             repeat(2, 1fr);
@@ -498,8 +641,34 @@ h1 span {
     }
 
 
+    /* CURRENT FOCUS */
+
+    .scope {
+        grid-template-columns: 1fr;
+
+        padding-bottom: 65px;
+    }
+
+
+    .scope-label {
+        padding: 22px 0;
+    }
+
+
+    .scope-content {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .scope-item {
+        min-height: 135px;
+    }
+
+
     .footer {
-        grid-template-columns: 1fr auto;
+        grid-template-columns:
+            1fr auto;
 
         gap: 18px;
 
@@ -509,7 +678,6 @@ h1 span {
 
     .footer-links {
         grid-row: 2;
-
         grid-column: 1 / -1;
     }
 
@@ -518,7 +686,30 @@ h1 span {
         grid-column: 2;
         grid-row: 1;
     }
+}
 
+
+/* --------------------------------
+   SMALL MOBILE
+-------------------------------- */
+
+@media (max-width: 550px) {
+
+    .scope-content {
+        grid-template-columns: 1fr;
+    }
+
+
+    .scope-item,
+    .scope-item:first-child {
+        border-left: 1px solid var(--line);
+        border-right: 1px solid var(--line);
+    }
+
+
+    .scope-item + .scope-item {
+        border-top: 1px solid var(--line);
+    }
 }
 
 
@@ -553,4 +744,12 @@ h1 span {
         justify-content: space-between;
     }
 
+
+    .footer-links {
+        width: 100%;
+
+        gap: 20px;
+
+        flex-wrap: wrap;
+    }
 }
