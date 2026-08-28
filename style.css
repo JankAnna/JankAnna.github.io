@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+
+
+:root {
+    --background: #08090a;
+    --foreground: #f2f2f0;
+    --muted: #8b8d91;
+    --border: rgba(255, 255, 255, 0.10);
+    --accent: #b8ff5c;
+
+    --content-width: 1180px;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    min-height: 100%;
+    background: var(--background);
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(184, 255, 92, 0.055),
+            transparent 32%
+        ),
+        var(--background);
+
+    color: var(--foreground);
+
+    font-family: "Inter", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.035;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.5) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.5) 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 75%
+    );
+}
+
+
+.page {
+    width: min(
+        calc(100% - 64px),
+        var(--content-width)
+    );
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* --------------------------------
+   HEADER
+-------------------------------- */
+
+.header {
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.logo {
+    color: var(--foreground);
+
+    text-decoration: none;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    letter-spacing: -0.04em;
+}
+
+
+.logo span {
+    color: var(--accent);
+}
+
+
+.github-link {
+    color: var(--muted);
+
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 12px;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.github-link:hover {
+    color: var(--foreground);
+}
+
+
+.arrow {
+    margin-left: 5px;
+}
+
+
+/* --------------------------------
+   HERO
+-------------------------------- */
+
+.hero {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 120px 0 140px;
+}
+
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 34px;
+
+    color: var(--muted);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 0 4px rgba(184, 255, 92, 0.08);
+
+    animation: pulse 2.5s infinite;
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+
+}
+
+
+h1 {
+    max-width: 850px;
+
+    font-size: clamp(
+        52px,
+        8vw,
+        108px
+    );
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    letter-spacing: -0.065em;
+}
+
+
+h1 span {
+    color: var(--muted);
+}
+
+
+.intro {
+    max-width: 570px;
+
+    margin-top: 42px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    letter-spacing: -0.01em;
+}
+
+
+/* --------------------------------
+   AREAS
+-------------------------------- */
+
+.areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    margin-top: 48px;
+}
+
+
+.areas span {
+    padding: 9px 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 999px;
+
+    color: #b9bbbf;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.04em;
+
+    background: rgba(255, 255, 255, 0.015);
+}
+
+
+/* --------------------------------
+   FOOTER
+-------------------------------- */
+
+.footer {
+    min-height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid var(--border);
+
+    color: #65676b;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+}
+
+
+.footer-right {
+    display: flex;
+    gap: 28px;
+}
+
+
+.footer a {
+    color: #85878b;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.footer a:hover {
+    color: var(--foreground);
+}
+
+
+.footer a span {
+    margin-left: 4px;
+}
+
+
+/* --------------------------------
+   RESPONSIVE
+-------------------------------- */
+
+@media (max-width: 700px) {
+
+    .page {
+        width: min(
+            calc(100% - 40px),
+            var(--content-width)
+        );
+    }
+
+
+    .header {
+        height: 78px;
+    }
+
+
+    .hero {
+        padding: 90px 0 100px;
+    }
+
+
+    .status {
+        margin-bottom: 28px;
+    }
+
+
+    h1 {
+        font-size: clamp(
+            48px,
+            15vw,
+            76px
+        );
+
+        line-height: 0.98;
+    }
+
+
+    .intro {
+        margin-top: 32px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    .areas {
+        margin-top: 38px;
+    }
+
+
+    .footer {
+        min-height: 74px;
+
+        align-items: flex-start;
+
+        padding: 24px 0;
+
+        flex-direction: column;
+
+        gap: 16px;
+    }
+
+
+    .footer-right {
+        gap: 20px;
+    }
+
+}
+
+
+/* --------------------------------
+   REDUCED MOTION
+-------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
