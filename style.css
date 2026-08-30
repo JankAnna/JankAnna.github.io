@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap");
 
 :root {
     --bg: #070809;
@@ -10,42 +9,32 @@
     --accent: #b7ff4a;
 }
 
-
-/* --------------------------------
-   RESET
--------------------------------- */
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-
-html,
-body {
+html {
     min-height: 100%;
 }
 
-
 body {
+    min-height: 100vh;
     background: var(--bg);
     color: var(--text);
     font-family: "Inter", sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
-
-
-/* --------------------------------
-   GRID
--------------------------------- */
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
+    z-index: -1;
 
     background-image:
         linear-gradient(
@@ -60,59 +49,39 @@ body::before {
         );
 
     background-size: 72px 72px;
-    opacity: 0.35;
-
-    mask-image: linear-gradient(
-        to bottom,
-        black 0%,
-        transparent 85%
-    );
+    opacity: 0.28;
 
     -webkit-mask-image: linear-gradient(
         to bottom,
         black 0%,
-        transparent 85%
+        transparent 82%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        transparent 82%
     );
 }
-
-
-/* --------------------------------
-   NOISE
--------------------------------- */
 
 .noise {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    opacity: 0.025;
     z-index: 10;
+    opacity: 0.022;
 
-    background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
 
-
-/* --------------------------------
-   CONTAINER
--------------------------------- */
-
 .container {
-    width: min(
-        calc(100% - 64px),
-        1240px
-    );
-
+    width: min(1240px, calc(100% - 64px));
     min-height: 100vh;
     margin: 0 auto;
 
     display: flex;
     flex-direction: column;
 }
-
-
-/* --------------------------------
-   HEADER
--------------------------------- */
 
 .header {
     min-height: 96px;
@@ -121,25 +90,19 @@ body::before {
     align-items: center;
     justify-content: space-between;
 
+    gap: 40px;
+
     border-bottom: 1px solid var(--line);
 }
-
-
-/* --------------------------------
-   BRAND GROUP
--------------------------------- */
 
 .brand-group {
     height: 42px;
 
     display: flex;
     align-items: stretch;
+
+    min-width: 0;
 }
-
-
-/* --------------------------------
-   BRAND
--------------------------------- */
 
 .brand {
     height: 42px;
@@ -158,12 +121,13 @@ body::before {
     letter-spacing: 0.08em;
 
     white-space: nowrap;
+
+    transition: color 0.2s ease;
 }
 
-
-/* --------------------------------
-   IDENTITY
--------------------------------- */
+.brand:hover {
+    color: var(--accent);
+}
 
 .identity {
     min-height: 42px;
@@ -179,54 +143,88 @@ body::before {
     border-left: 1px solid var(--line);
 }
 
-
 .identity-name {
     color: var(--text);
 
     font-family: "DM Mono", monospace;
     font-size: 10px;
     font-weight: 500;
-
     letter-spacing: 0.12em;
     line-height: 1.2;
 
     white-space: nowrap;
 }
 
-
 .identity-alias {
     color: var(--muted);
 
     font-family: "DM Mono", monospace;
     font-size: 9px;
-
     letter-spacing: 0.08em;
     line-height: 1.2;
 
     white-space: nowrap;
 }
 
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+}
 
-/* --------------------------------
-   SYSTEM STATUS
--------------------------------- */
+.main-nav a,
+.main-nav .active {
+    color: var(--muted);
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+.main-nav .active {
+    color: var(--text);
+}
+
+.main-nav .active::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 5px;
+    height: 5px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    vertical-align: middle;
+}
 
 .system-status {
     display: flex;
     align-items: center;
-
     gap: 9px;
 
     color: var(--muted);
 
     font-family: "DM Mono", monospace;
     font-size: 9px;
-
     letter-spacing: 0.1em;
 
     white-space: nowrap;
 }
-
 
 .status-indicator {
     width: 6px;
@@ -238,12 +236,10 @@ body::before {
 
     background: var(--accent);
 
-    box-shadow:
-        0 0 12px rgba(183, 255, 74, 0.6);
+    box-shadow: 0 0 12px rgba(183, 255, 74, 0.6);
 
     animation: blink 2s infinite;
 }
-
 
 @keyframes blink {
     0%,
@@ -256,102 +252,78 @@ body::before {
     }
 }
 
-
-/* --------------------------------
-   HERO
--------------------------------- */
-
 .hero {
     flex: 1;
 
     display: flex;
     flex-direction: column;
 
-    padding: 90px 0 75px;
+    padding: 82px 0 70px;
 }
-
 
 .eyebrow {
     display: flex;
-
+    align-items: center;
     gap: 18px;
 
     color: var(--muted);
 
     font-family: "DM Mono", monospace;
     font-size: 10px;
-
     letter-spacing: 0.12em;
 }
-
 
 .eyebrow span {
     color: var(--accent);
 }
 
-
-/* --------------------------------
-   HERO CONTENT
--------------------------------- */
-
 .hero-content {
     margin-top: 48px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 320px;
+
+    align-items: end;
 
     gap: 80px;
 }
 
-
 .title-area {
-    display: flex;
-    flex-direction: column;
+    min-width: 0;
 }
-
 
 .title-wrap {
     position: relative;
 }
 
-
 h1 {
-    font-size: clamp(
-        70px,
-        11vw,
-        150px
-    );
-
-    line-height: 0.83;
+    font-size: clamp(64px, 9.5vw, 138px);
+    line-height: 0.86;
 
     font-weight: 500;
 
     letter-spacing: -0.075em;
 }
 
-
 h1 span {
     color: var(--muted);
 }
 
-
 .cursor {
     display: inline-block;
 
-    width: 12px;
-    height: 0.65em;
+    width: 11px;
+    height: 0.64em;
 
-    margin-left: 14px;
+    margin-left: 12px;
 
     background: var(--accent);
 
     vertical-align: bottom;
 
-    animation:
-        cursor-blink 1s steps(1) infinite;
+    animation: cursor-blink 1s steps(1) infinite;
 }
-
 
 @keyframes cursor-blink {
     0%,
@@ -365,52 +337,39 @@ h1 span {
     }
 }
 
-
-/* --------------------------------
-   DESCRIPTION
--------------------------------- */
-
 .description {
-    max-width: 360px;
+    max-width: 320px;
 
-    padding-bottom: 7px;
+    padding-bottom: 5px;
 
     font-family: "DM Mono", monospace;
     font-size: 11px;
-
     line-height: 1.8;
 }
 
-
 .description p {
+    margin-bottom: 14px;
     color: var(--text);
-    margin-bottom: 12px;
 }
-
 
 .description .muted {
     color: var(--muted);
 }
 
-
-/* --------------------------------
-   DOMAINS
--------------------------------- */
-
 .domains {
-    margin-top: 95px;
+    margin-top: 88px;
 
     display: grid;
+
     grid-template-columns: repeat(5, 1fr);
 
     border-top: 1px solid var(--line);
 }
 
-
 .domain {
-    min-height: 100px;
+    min-height: 96px;
 
-    padding: 20px 16px;
+    padding: 18px 16px;
 
     display: flex;
     flex-direction: column;
@@ -422,7 +381,6 @@ h1 span {
 
     font-family: "DM Mono", monospace;
     font-size: 10px;
-
     letter-spacing: 0.05em;
 
     transition:
@@ -430,98 +388,74 @@ h1 span {
         color 0.25s ease;
 }
 
-
 .domain:first-child {
     border-left: 1px solid var(--line);
 }
 
-
 .domain:hover {
     color: var(--text);
-
-    background:
-        rgba(255, 255, 255, 0.025);
+    background: rgba(255, 255, 255, 0.025);
 }
-
 
 .domain .number {
     color: var(--dim);
     font-size: 9px;
 }
 
-
-/* --------------------------------
-   CURRENT FOCUS
--------------------------------- */
-
 .scope {
-    padding: 0 0 90px;
+    margin-top: 68px;
+
+    padding-bottom: 78px;
 
     display: grid;
 
-    grid-template-columns:
-        1fr 3fr;
+    grid-template-columns: 1fr 3fr;
 
     border-top: 1px solid var(--line);
-
-    margin-top: 75px;
 }
 
-
 .scope-label {
-    padding-top: 22px;
+    padding-top: 20px;
 
     display: flex;
-
     gap: 18px;
 
     color: var(--muted);
 
     font-family: "DM Mono", monospace;
     font-size: 10px;
-
     letter-spacing: 0.12em;
 }
-
 
 .scope-label span {
     color: var(--accent);
 }
 
-
 .scope-content {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
-
 .scope-item {
-    min-height: 150px;
+    min-height: 148px;
 
-    padding: 22px 20px;
+    padding: 20px;
 
     display: flex;
     flex-direction: column;
 
     border-right: 1px solid var(--line);
 
-    transition:
-        background 0.25s ease;
+    transition: background 0.25s ease;
 }
-
 
 .scope-item:first-child {
     border-left: 1px solid var(--line);
 }
 
-
 .scope-item:hover {
-    background:
-        rgba(255, 255, 255, 0.025);
+    background: rgba(255, 255, 255, 0.025);
 }
-
 
 .scope-item > span {
     margin-bottom: auto;
@@ -532,7 +466,6 @@ h1 span {
     font-size: 9px;
 }
 
-
 .scope-item strong {
     margin-bottom: 9px;
 
@@ -541,32 +474,25 @@ h1 span {
     font-family: "DM Mono", monospace;
     font-size: 11px;
     font-weight: 500;
-
     letter-spacing: 0.05em;
 }
 
-
 .scope-item small {
+    max-width: 190px;
+
     color: var(--muted);
 
     font-family: "DM Mono", monospace;
     font-size: 8px;
-
-    line-height: 1.6;
+    line-height: 1.65;
 }
-
-
-/* --------------------------------
-   FOOTER
--------------------------------- */
 
 .footer {
     min-height: 82px;
 
     display: grid;
 
-    grid-template-columns:
-        1fr auto 1fr;
+    grid-template-columns: 1fr auto 1fr;
 
     align-items: center;
 
@@ -576,189 +502,164 @@ h1 span {
 
     font-family: "DM Mono", monospace;
     font-size: 9px;
-
     letter-spacing: 0.06em;
 }
-
 
 .footer-links {
     display: flex;
     gap: 28px;
 }
 
-
 .footer a {
     color: var(--muted);
-
     text-decoration: none;
 
-    transition:
-        color 0.2s ease;
+    transition: color 0.2s ease;
 }
-
 
 .footer a:hover {
     color: var(--accent);
 }
-
 
 .version {
     justify-self: end;
     color: var(--dim);
 }
 
+@media (max-width: 950px) {
+    .container {
+        width: calc(100% - 48px);
+    }
 
-/* --------------------------------
-   MOBILE
--------------------------------- */
+    .header {
+        gap: 24px;
+    }
+
+    .main-nav {
+        gap: 16px;
+    }
+
+    .hero-content {
+        grid-template-columns: minmax(0, 1fr) 270px;
+        gap: 45px;
+    }
+
+    h1 {
+        font-size: clamp(60px, 10vw, 110px);
+    }
+}
 
 @media (max-width: 800px) {
-
     .container {
         width: calc(100% - 40px);
     }
-
 
     .header {
         min-height: 76px;
     }
 
-
     .brand-group {
         height: 38px;
     }
 
-
     .brand {
         height: 38px;
-
         padding-right: 18px;
-
         font-size: 14px;
     }
 
-
     .identity {
         min-height: 38px;
-
         padding-left: 18px;
-
         gap: 4px;
     }
-
 
     .identity-name {
         font-size: 8px;
         letter-spacing: 0.08em;
     }
 
-
     .identity-alias {
         font-size: 8px;
     }
 
+    .main-nav {
+        gap: 12px;
+    }
 
-    .system-status {
+    .main-nav a,
+    .main-nav .active {
         font-size: 8px;
     }
 
-
     .hero {
-        padding: 75px 0 65px;
+        padding: 68px 0 58px;
     }
-
 
     .hero-content {
-        margin-top: 55px;
+        margin-top: 48px;
 
-        flex-direction: column;
+        grid-template-columns: 1fr;
 
-        align-items: flex-start;
+        align-items: start;
 
-        gap: 50px;
+        gap: 42px;
     }
-
 
     h1 {
-        font-size: clamp(
-            62px,
-            18vw,
-            100px
-        );
+        font-size: clamp(58px, 16vw, 92px);
     }
-
 
     .description {
-        max-width: 320px;
+        max-width: 340px;
     }
-
 
     .domains {
-        margin-top: 70px;
+        margin-top: 68px;
 
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-
 
     .domain:nth-child(2n) {
         border-right: 0;
     }
 
-
     .domain:nth-child(n + 3) {
         border-top: 1px solid var(--line);
     }
 
-
-    /* --------------------------------
-       CURRENT FOCUS
-    -------------------------------- */
-
     .scope {
         grid-template-columns: 1fr;
 
-        padding-bottom: 65px;
+        padding-bottom: 58px;
 
-        margin-top: 65px;
+        margin-top: 58px;
     }
-
 
     .scope-label {
-        padding: 22px 0;
+        padding: 20px 0;
     }
-
 
     .scope-content {
-        grid-template-columns:
-            repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-
 
     .scope-item {
         min-height: 135px;
     }
 
-
-    /* --------------------------------
-       FOOTER
-    -------------------------------- */
-
     .footer {
-        grid-template-columns:
-            1fr auto;
+        grid-template-columns: 1fr auto;
 
         gap: 18px;
 
         padding: 22px 0;
     }
 
-
     .footer-links {
         grid-row: 2;
         grid-column: 1 / -1;
     }
-
 
     .version {
         grid-column: 2;
@@ -766,17 +667,32 @@ h1 span {
     }
 }
 
+@media (max-width: 650px) {
+    .header {
+        flex-wrap: wrap;
 
-/* --------------------------------
-   SMALL MOBILE
--------------------------------- */
+        padding: 18px 0;
 
-@media (max-width: 550px) {
+        gap: 14px;
+    }
+
+    .main-nav {
+        width: 100%;
+
+        padding-top: 13px;
+
+        border-top: 1px solid var(--line);
+
+        justify-content: flex-start;
+    }
+
+    .hero {
+        padding-top: 58px;
+    }
 
     .scope-content {
         grid-template-columns: 1fr;
     }
-
 
     .scope-item,
     .scope-item:first-child {
@@ -784,81 +700,73 @@ h1 span {
         border-right: 1px solid var(--line);
     }
 
-
     .scope-item + .scope-item {
         border-top: 1px solid var(--line);
     }
 }
 
-
-/* --------------------------------
-   VERY SMALL MOBILE
--------------------------------- */
-
 @media (max-width: 450px) {
-
-    .system-status {
-        display: none;
+    .container {
+        width: calc(100% - 28px);
     }
-
-
-    .header {
-        min-height: 76px;
-    }
-
-
-    .brand-group {
-        width: 100%;
-
-        height: 38px;
-
-        justify-content: flex-start;
-    }
-
-
-    .brand {
-        font-size: 13px;
-
-        padding-right: 15px;
-    }
-
 
     .identity {
-        padding-left: 15px;
-
-        gap: 4px;
+        padding-left: 14px;
     }
 
+    .brand {
+        padding-right: 14px;
+        font-size: 13px;
+    }
 
     .identity-name {
         font-size: 7px;
-
         letter-spacing: 0.06em;
     }
 
-
     .identity-alias {
         font-size: 7px;
-
         letter-spacing: 0.05em;
     }
 
+    .main-nav {
+        gap: 13px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 52px;
+    }
+
+    h1 {
+        font-size: clamp(52px, 17vw, 76px);
+        letter-spacing: -0.07em;
+    }
+
+    .cursor {
+        width: 8px;
+        margin-left: 7px;
+    }
 
     .domains {
         grid-template-columns: 1fr;
     }
-
 
     .domain,
     .domain:nth-child(2n) {
         border-right: 1px solid var(--line);
     }
 
-
     .domain + .domain {
         border-top: 1px solid var(--line);
     }
-
 
     .footer {
         display: flex;
@@ -867,7 +775,6 @@ h1 span {
 
         justify-content: space-between;
     }
-
 
     .footer-links {
         width: 100%;
