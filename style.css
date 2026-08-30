@@ -10,7 +10,7 @@
     --muted: #70747a;
     --dim: #363a3e;
     --line: rgba(255, 255, 255, 0.09);
-    --accent: #b7ff4a;
+    --accent: #FFC300;
 }
 
 /* ========================================
@@ -280,7 +280,7 @@ body::before {
 
     background: var(--accent);
 
-    box-shadow: 0 0 12px rgba(183, 255, 74, 0.6);
+    box-shadow: 0 0 12px rgba(255, 195, 0, 0.45);
 
     animation: blink 2s infinite;
 }
