@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap");
 
+/* ========================================
+   VARIABLES
+======================================== */
+
 :root {
     --bg: #070809;
     --text: #e8e9e6;
@@ -9,6 +13,10 @@
     --accent: #b7ff4a;
 }
 
+/* ========================================
+   RESET
+======================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,6 +25,7 @@
 
 html {
     min-height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -28,6 +37,10 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
+
+/* ========================================
+   BACKGROUND GRID
+======================================== */
 
 body::before {
     content: "";
@@ -64,6 +77,10 @@ body::before {
     );
 }
 
+/* ========================================
+   NOISE
+======================================== */
+
 .noise {
     position: fixed;
     inset: 0;
@@ -74,6 +91,10 @@ body::before {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
 
+/* ========================================
+   CONTAINER
+======================================== */
+
 .container {
     width: min(1240px, calc(100% - 64px));
     min-height: 100vh;
@@ -82,6 +103,10 @@ body::before {
     display: flex;
     flex-direction: column;
 }
+
+/* ========================================
+   HEADER
+======================================== */
 
 .header {
     min-height: 96px;
@@ -94,6 +119,10 @@ body::before {
 
     border-bottom: 1px solid var(--line);
 }
+
+/* ========================================
+   BRAND
+======================================== */
 
 .brand-group {
     height: 42px;
@@ -128,6 +157,10 @@ body::before {
 .brand:hover {
     color: var(--accent);
 }
+
+/* ========================================
+   IDENTITY
+======================================== */
 
 .identity {
     min-height: 42px;
@@ -166,10 +199,16 @@ body::before {
     white-space: nowrap;
 }
 
+/* ========================================
+   MAIN NAVIGATION
+======================================== */
+
 .main-nav {
     display: flex;
     align-items: center;
+
     gap: 24px;
+
     flex-shrink: 0;
 }
 
@@ -212,9 +251,14 @@ body::before {
     vertical-align: middle;
 }
 
+/* ========================================
+   SYSTEM STATUS
+======================================== */
+
 .system-status {
     display: flex;
     align-items: center;
+
     gap: 9px;
 
     color: var(--muted);
@@ -252,6 +296,10 @@ body::before {
     }
 }
 
+/* ========================================
+   HERO
+======================================== */
+
 .hero {
     flex: 1;
 
@@ -264,6 +312,7 @@ body::before {
 .eyebrow {
     display: flex;
     align-items: center;
+
     gap: 18px;
 
     color: var(--muted);
@@ -297,6 +346,10 @@ body::before {
     position: relative;
 }
 
+/* ========================================
+   HEADLINE
+======================================== */
+
 h1 {
     font-size: clamp(64px, 9.5vw, 138px);
     line-height: 0.86;
@@ -309,6 +362,10 @@ h1 {
 h1 span {
     color: var(--muted);
 }
+
+/* ========================================
+   CURSOR
+======================================== */
 
 .cursor {
     display: inline-block;
@@ -337,6 +394,10 @@ h1 span {
     }
 }
 
+/* ========================================
+   DESCRIPTION
+======================================== */
+
 .description {
     max-width: 320px;
 
@@ -356,11 +417,14 @@ h1 span {
     color: var(--muted);
 }
 
+/* ========================================
+   DOMAINS
+======================================== */
+
 .domains {
     margin-top: 88px;
 
     display: grid;
-
     grid-template-columns: repeat(5, 1fr);
 
     border-top: 1px solid var(--line);
@@ -402,13 +466,16 @@ h1 span {
     font-size: 9px;
 }
 
+/* ========================================
+   SCOPE
+======================================== */
+
 .scope {
     margin-top: 68px;
 
     padding-bottom: 78px;
 
     display: grid;
-
     grid-template-columns: 1fr 3fr;
 
     border-top: 1px solid var(--line);
@@ -418,6 +485,7 @@ h1 span {
     padding-top: 20px;
 
     display: flex;
+
     gap: 18px;
 
     color: var(--muted);
@@ -433,6 +501,7 @@ h1 span {
 
 .scope-content {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -487,12 +556,15 @@ h1 span {
     line-height: 1.65;
 }
 
+/* ========================================
+   FOOTER
+======================================== */
+
 .footer {
     min-height: 82px;
 
     display: grid;
-
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr auto;
 
     align-items: center;
 
@@ -501,12 +573,18 @@ h1 span {
     color: var(--muted);
 
     font-family: "DM Mono", monospace;
-    font-size: 9px;
+    font-size: 8px;
     letter-spacing: 0.06em;
 }
 
+/* ========================================
+   FOOTER LINKS
+======================================== */
+
 .footer-links {
     display: flex;
+    align-items: center;
+
     gap: 28px;
 }
 
@@ -521,10 +599,110 @@ h1 span {
     color: var(--accent);
 }
 
-.version {
-    justify-self: end;
-    color: var(--dim);
+/* ========================================
+   FOOTER IDENTITY
+======================================== */
+
+.footer-identity {
+    min-height: 42px;
+
+    display: flex;
+    align-items: stretch;
+
+    margin-left: auto;
 }
+
+/* ========================================
+   FOOTER NAME
+======================================== */
+
+.footer-name {
+    min-height: 42px;
+
+    padding-right: 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 5px;
+
+    color: var(--text);
+
+    white-space: nowrap;
+}
+
+.footer-name-main {
+    color: var(--text);
+
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+}
+
+.footer-name-alias {
+    color: var(--dim);
+
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+}
+
+/* ========================================
+   FOOTER BRAND
+======================================== */
+
+.footer-brand {
+    min-height: 42px;
+
+    padding-left: 24px;
+
+    display: flex;
+    align-items: center;
+
+    border-left: 1px solid var(--line);
+}
+
+.footer-brand-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: var(--text);
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+.footer-brand-year {
+    color: var(--muted);
+
+    transition: color 0.2s ease;
+}
+
+.footer-brand-main {
+    color: var(--text);
+}
+
+.footer-brand-main span {
+    color: var(--accent);
+}
+
+.footer-brand-link:hover .footer-brand-year {
+    color: var(--accent);
+}
+
+/* ========================================
+   TABLET — 950px
+======================================== */
 
 @media (max-width: 950px) {
     .container {
@@ -548,6 +726,10 @@ h1 span {
         font-size: clamp(60px, 10vw, 110px);
     }
 }
+
+/* ========================================
+   TABLET — 800px
+======================================== */
 
 @media (max-width: 800px) {
     .container {
@@ -631,9 +813,9 @@ h1 span {
     .scope {
         grid-template-columns: 1fr;
 
-        padding-bottom: 58px;
-
         margin-top: 58px;
+
+        padding-bottom: 58px;
     }
 
     .scope-label {
@@ -657,15 +839,19 @@ h1 span {
     }
 
     .footer-links {
-        grid-row: 2;
         grid-column: 1 / -1;
+        grid-row: 2;
     }
 
-    .version {
+    .footer-identity {
         grid-column: 2;
         grid-row: 1;
     }
 }
+
+/* ========================================
+   MOBILE — 650px
+======================================== */
 
 @media (max-width: 650px) {
     .header {
@@ -703,7 +889,34 @@ h1 span {
     .scope-item + .scope-item {
         border-top: 1px solid var(--line);
     }
+
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: center;
+
+        gap: 0;
+
+        padding: 25px 0;
+    }
+
+    .footer-identity {
+        margin-left: auto;
+    }
+
+    .footer-links {
+        width: 100%;
+
+        margin-top: 20px;
+
+        gap: 20px;
+    }
 }
+
+/* ========================================
+   MOBILE — 450px
+======================================== */
 
 @media (max-width: 450px) {
     .container {
@@ -770,10 +983,19 @@ h1 span {
 
     .footer {
         display: flex;
+        flex-direction: column;
 
-        flex-wrap: wrap;
+        align-items: stretch;
 
-        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .footer-identity {
+        width: 100%;
+
+        margin-left: 0;
+
+        justify-content: flex-end;
     }
 
     .footer-links {
@@ -782,5 +1004,27 @@ h1 span {
         gap: 20px;
 
         flex-wrap: wrap;
+
+        order: 2;
+    }
+
+    .footer-name {
+        padding-right: 16px;
+    }
+
+    .footer-brand {
+        padding-left: 16px;
+    }
+
+    .footer-name-main {
+        font-size: 8px;
+    }
+
+    .footer-brand-link {
+        font-size: 8px;
+    }
+
+    .footer-name-alias {
+        font-size: 7px;
     }
 }
