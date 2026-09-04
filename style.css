@@ -251,6 +251,18 @@ body::before {
     color: var(--accent);
 }
 
+.main-nav .unpublished {
+    color: var(--muted);
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    letter-spacing: 0.07em;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
 .main-nav .active {
     color: var(--text);
 }
