@@ -1,63 +1,43 @@
-# Build PHP + CSV and deploy generated static site to GitHub Pages
-
-name: Build and Deploy Hub
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
 
 on:
+  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
 
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-
-  build:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: "8.4"
-
-      - name: Build static HTML from PHP
-        run: |
-          mkdir -p build
-
-          php -S 127.0.0.1:8000 -t . > /tmp/php-server.log 2>&1 &
-          PHP_PID=$!
-
-          sleep 2
-
-          curl -f http://127.0.0.1:8000/index.php -o build/index.html
-
-          kill $PHP_PID
-
-      - name: Copy assets and CNAME
-        run: |
-          cp -r assets build/assets
-          cp CNAME build/CNAME
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
-
+          # Upload entire repository
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
