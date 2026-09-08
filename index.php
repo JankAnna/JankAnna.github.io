@@ -59,7 +59,7 @@ usort(
         (int) $a['order'] <=> (int) $b['order']
 );
 
-$pageTitle = 'Portfolio — ' . ($site['name'] ?? 'JANNA');
+$pageTitle = 'JANNA Hub — ' . ($site['name'] ?? 'JANNA');
 
 ?>
 <!DOCTYPE html>
