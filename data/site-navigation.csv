@@ -1,0 +1,5 @@
+id;label;url;type;target;status;order
+site01;HUB;https://hub.janna.pl/;current;;active;1
+site02;NOTES ↗;https://notes.janna.pl/;external;_blank;published;2
+site03;PORTFOLIO ↗;https://portfolio.janna.pl/;external;_blank;published;3
+site04;BIZNES ↗;;external;;unpublished;4

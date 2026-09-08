@@ -1,0 +1,5 @@
+id;number;title;description;order
+scope01;01;KNOWLEDGE;NOTES / dokumentacja / baza wiedzy;1
+scope02;02;CAREER;PORTFOLIO / doświadczenie / projekty;2
+scope03;03;BUSINESS;JANNA Biznes / rozwiązania / analizy;3
+scope04;04;PROJECTS;projekty / development / eksperymenty;4

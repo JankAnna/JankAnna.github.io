@@ -698,10 +698,10 @@ h1 span {
 }
 
 .footer-brand-link {
+    min-height: 42px;
+
     display: inline-flex;
     align-items: center;
-
-    gap: 6px;
 
     color: var(--text);
     text-decoration: none;
@@ -710,9 +710,11 @@ h1 span {
     font-size: 9px;
     font-weight: 500;
     letter-spacing: 0.08em;
-    line-height: 1.2;
+    line-height: 1;
 
     white-space: nowrap;
+
+    transition: color 0.2s ease;
 }
 
 .footer-brand-year {
@@ -722,15 +724,33 @@ h1 span {
 }
 
 .footer-brand-main {
+    margin-left: 8px;
     color: var(--text);
+    transition: color 0.2s ease;
 }
 
-.footer-brand-main span {
+.footer-brand-main .brand-dot {
+    color: var(--accent);
+    transition: color 0.25s ease;
+}
+
+.footer-brand-main .brand-n {
+    display: inline-block;
+    transition: transform 0.35s ease;
+}
+
+.footer-brand-link:hover,
+.footer-brand-link:hover .footer-brand-year,
+.footer-brand-link:hover .footer-brand-main {
     color: var(--accent);
 }
 
-.footer-brand-link:hover .footer-brand-year {
+.footer-brand-link:hover .brand-dot {
     color: var(--accent);
+}
+
+.footer-brand-link:hover .brand-n {
+    transform: scaleX(-1);
 }
 
 /* ========================================
